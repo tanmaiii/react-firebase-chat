@@ -1,0 +1,17 @@
+@use '../../scss/' as *;
+
+
+.chat{
+    padding: 20px;
+    display: flex !important;
+    height: calc(100vh - 80px);
+
+    .chat-container{
+        border-radius: $border-radius;
+        background-color: $color-b3;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+}

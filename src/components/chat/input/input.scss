@@ -1,0 +1,50 @@
+@use "../../../scss/" as *;
+
+.input {
+  position: absolute;
+  bottom: 10px;
+  padding: 20px;
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  // height: $height-input-chat;
+  @include flex(center,unset);
+  background-color: $color-b2;
+  border-radius: 20px;
+  textarea {
+    color: $white;
+    height: 55px;
+    max-height: 180px;
+    resize: none;
+    font-size: 1.2rem;
+    padding: 16px;
+    width: 100%;
+    margin-right: 10px;
+  }
+
+  .send {
+    @include flex(center, unset);
+    .label-img {
+      cursor: pointer;
+      @include flex(center, unset);
+      color: $color-txt1;
+      svg {
+        font-size: 1.6rem;
+      }
+    }
+    .btn-send {
+      background-color: $color-primary;
+      padding: 10px;
+      border-radius: $border-radius;
+      @include flex(center, unset);
+      color: $color-b1;
+      cursor: pointer;
+      margin-left: 20px;
+      font-size: 1.8rem;
+      transition: all 0.3s;
+      &:hover {
+        color: $color-b4;
+      }
+    }
+  }
+}

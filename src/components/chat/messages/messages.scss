@@ -1,0 +1,65 @@
+@use "../../../scss/" as *;
+
+.messages {
+  padding: 10px 10px 10px 10px;
+  height: calc(100% - $height-header-chat - $height-input-chat);
+  overflow-y: auto;
+  .message {
+    display: flex;
+    margin-bottom: 10px;
+
+    .message_avt {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    &_content {
+      max-width: 60%;
+      width: max-content;
+      text-align: left;
+      @include mobile{
+        max-width: 80%;
+      }
+      p {
+        background-color: $color-primary;
+
+        padding: 20px;
+        color: $white;
+        border-radius: 0 20px 20px 20px;
+        font-size: 1.1rem;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
+      img {
+        max-width: 50%;
+        margin-bottom: 10px;
+      }
+      &_time{
+          color: $color-txt2;
+          font-size: 0.8rem;
+          padding: 10px;
+      }
+    }
+
+    &.owner {
+      justify-content: flex-end;
+      p {
+        border-radius: 20px 0 20px 20px;
+        background-color: $color-b2;
+      }
+      .message_content_img{
+        @include flex(center, unset);
+        justify-content: end;
+      }
+      .message_avt {
+        display: none;
+      }
+      .message_content{
+        text-align: right;
+      }
+    }
+  }
+}

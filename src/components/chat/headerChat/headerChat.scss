@@ -1,0 +1,31 @@
+@use '../../../scss/' as *;
+
+
+.headerChat{
+    width: 100%;
+    background-color: $color-b1;
+    color: white;
+    padding: 10px 20px;
+    height: $height-header-chat;
+    &_left{
+        @include flex(center, unset);
+        img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        span{
+            margin-right: 8px;
+            font-size: 1rem;
+            font-weight: 400;
+            color: $color-txt1;
+        }
+        h3{
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 0;
+        }
+    }
+}

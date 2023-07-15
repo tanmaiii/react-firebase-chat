@@ -1,0 +1,51 @@
+@use '../../../scss/' as *;
+
+
+.chats{
+    padding: 20px 0;
+
+    .userChat{
+        padding: 20px 10px;
+        @include flex(center, unset);
+        border-radius: $border-radius;
+        margin-bottom: 10px;
+        transition: all .3s;
+        cursor: pointer;
+
+        @include tablet(){
+            justify-content: center
+        }
+        
+        &:hover{
+            background-color: $color-b3;
+        }
+
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .userChatInfo{
+            @include tablet(){
+                // display: none;
+            }
+            flex: 1;
+            span{
+                color: $white;
+                font-size: 1.2rem;
+                font-weight: 600;
+                @include text(1)
+
+            }
+            p{
+                color: $color-txt1;
+                font-size: 1rem;
+                overflow: hidden;
+                @include text(1)
+            }
+        }
+    }
+}

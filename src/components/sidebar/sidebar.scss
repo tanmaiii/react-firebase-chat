@@ -1,0 +1,40 @@
+@use '../../scss/' as *;
+
+.sidebar{
+    background-color: $color-b4;
+    padding: 20px !important;
+    height: calc(100vh - 80px);
+    overflow: auto;
+    transition: all .3s;
+    @include tablet(){
+    };
+    @include mobile(){
+        transform: translateX(-100%);
+        &.active{
+            transform: translateX(0);
+        }
+        padding: 40px 10px !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 80;
+    }
+
+    &_btn_close{
+        display: none;
+        @include mobile{
+            display: block;
+        }
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 81;
+        color: $color-primary;
+        padding: 8px;
+        cursor: pointer;
+        svg{
+            font-size: 2.2rem;
+        }
+    }
+}

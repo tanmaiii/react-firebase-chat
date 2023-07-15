@@ -1,0 +1,275 @@
+@use "../../scss/" as *;
+
+.container-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - $height-navbar);
+}
+
+.auth {
+  background-color: $color-b2;
+  padding: 20px 40px;
+  border-radius: $border-radius;
+  width: 600px;
+  height: max-content;
+  position: relative;
+  box-shadow: 5px 4px 15px -4px rgba(0, 0, 0, 0.66);
+  @include mobile {
+    width: 80%;
+  }
+  .auth_img {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 50%);
+    bottom: 100%;
+    border: 6px solid $color-b4;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &_body {
+    padding-top: 60px;
+
+    &_item_error{
+      width: 100%;
+      color: $white;
+      font-size: 1.1rem;
+      display: block;
+      background-color: $red;
+      padding: 20px 20px;
+      border-radius: $border-radius;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &_item_message{
+      width: 100%;
+      color: $white;
+      font-size: 1.1rem;
+      display: block;
+      background-color: $color-primary;
+      padding: 20px 20px;
+      border-radius: $border-radius;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    &_item {
+      margin-bottom: 20px;
+      width: 100%;
+      color: $white;
+      font-size: 1.1rem;
+      display: block;
+      background-color: $color-b3;
+      padding: 16px 20px;
+      border-radius: $border-radius;
+      display: flex;
+      align-items: center;
+      
+      input,span {
+        padding: 0;
+        font-size: 1.2rem;
+        margin-left: 10px;
+        border-radius: 0;
+        color: $white;
+        width: 100%;
+      }
+      label {
+        margin: 0;
+        padding: 8px 10px;
+        background-color: $color-b4;
+        border-radius: 10px;
+        color: $color-primary;
+        @include flex(center, unset);
+        svg {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &_item_btn {
+      @include flex(center, end);
+
+      a {
+        margin-left: 10px;
+        display: block;
+      }
+    }
+  }
+}
+
+.auth_UpdateProfile {
+  .auth_img {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 50%);
+    bottom: 100%;
+    border: 6px solid $color-b4;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    label {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      cursor: pointer;
+      svg {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .auth_body {
+    &_item_btn {
+      justify-content: space-between;
+    }
+  }
+}
+
+.auth_login-signup {
+  .auth_body {
+    padding-top: 0;
+    &_header {
+      color: $white;
+      margin-bottom: 20px;
+      h3 {
+        font-size: 2rem;
+      }
+      span {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: $color-txt1;
+      }
+    }
+
+    &_item_avatar {
+      @include flex(center, center);
+      padding: 10px 0;
+      &_img {
+        position: relative;
+        img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 4px solid $color-primary;
+        }
+        label {
+          position: absolute;
+          bottom: 6px;
+          right: 6px;
+          background-color: $color-b4;
+          padding: 6px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          svg{
+            line-height: 1;
+            width: 24px;
+            height: 24px;
+            color: $white;
+          }
+        }
+      }
+    }
+
+
+
+    &_item {
+      width: 100%;
+      color: $white;
+      font-size: 1.1rem;
+      display: block;
+      background-color: $color-b3;
+      padding: 16px 20px;
+      border-radius: $border-radius;
+      display: flex;
+      align-items: center;
+      input {
+        padding: 0;
+        font-size: 1.2rem;
+        margin-left: 10px;
+        border-radius: 0;
+      }
+      label {
+        margin: 0;
+        padding: 8px 10px;
+        background-color: $color-b4;
+        border-radius: 10px;
+        color: $color-primary;
+        @include flex(center, unset);
+        svg {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &_item_password {
+      @include flex(center, end);
+      margin-bottom: 10px;
+      a {
+        font-size: 1.1rem;
+        color: $color-primary;
+      }
+    }
+
+    &_item_terms {
+      @include flex(center, end);
+      margin-bottom: 10px;
+      input {
+        width: 16px;
+        height: 16px;
+      }
+      span {
+        margin-left: 10px;
+        color: $color-primary;
+      }
+    }
+
+    &_item_btn {
+      button {
+        width: 100%;
+      }
+    }
+
+    &_item_signup {
+      @include flex(center, center);
+      margin-top: 10px;
+      font-size: 1.1rem;
+      span {
+        color: $color-txt1;
+      }
+      a {
+        margin-left: 10px;
+        color: $color-primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@use '../../scss/' as *;
+
+
+.navbar{
+    height: 80px;
+    background-color: $color-b4;
+    padding: 0 40px;
+    border-bottom: 2px solid $black;
+    @include flex(center, space-between);
+    &_left{
+        @include flex(center, space-between);
+        height: 100%;
+        .navbar_logo{
+            color: $white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 60px;
+            @include mobile{
+                margin-right: 10px;
+            }
+        }
+        .navbar_control{
+             @include flex(center, unset);
+             height: 100%;
+             &_item{
+                @include flex(center, unset);
+                height: 100%;
+                color: $color-txt1;
+                font-size: 1.2rem;
+                margin-right: 20px;
+                transition: all .3s;
+                position: relative;
+                cursor: pointer;
+                svg{
+                    font-size: 1.4rem;
+                    margin-right: 10px;
+                }
+                a{
+
+                }
+
+                &.active{
+                    color: $color-primary;
+                    &::after{
+                        width: 100%;
+                    }
+                }
+                
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: $color-primary;
+                    width: 0;
+                    height: 6px;
+                    border-bottom-left-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    transition: all .3s;
+                }
+
+                &:hover{
+                    color: $color-primary;
+                    &::after{
+                        width: 100%;
+                    }
+                }
+             }
+        }
+    }
+
+    &_right_info{
+        @include flex(center, unset);
+        @include mobile{
+            display: none;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid $color-primary;
+            margin-left: 10px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+        .navbar_info_body{
+            color: $white;
+            text-align: end;
+            span{
+                font-size: 1.1rem;
+            }
+            p{
+                font-size: 1rem;
+                color: $color-txt1;
+            }
+        }
+    }
+
+    &_right_menu{
+        display: none;
+        @include mobile{
+            display: block;
+        }
+        button{
+            padding: 10px;
+            color: $color-txt1;
+            cursor: pointer;
+            transition: all .3s;
+            svg{
+                font-size: 2.2rem;
+            }
+            &:hover{
+               color: $color-primary;
+            }
+        }
+    }
+}

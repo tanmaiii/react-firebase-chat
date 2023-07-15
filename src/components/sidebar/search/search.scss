@@ -1,0 +1,95 @@
+@use "../../../scss/" as *;
+
+.search {
+  width: 100%;
+  position: relative;
+  &_input {
+    width: 100%;
+    padding: 20px;
+    background-color: $color-b2;
+    border-radius: $border-radius;
+    overflow: hidden;
+    position: relative;
+    @include flex(center, unset);
+    button {
+      width: 20px;
+      margin-right: 10px;
+      color: $color-txt1;
+      cursor: pointer;
+      svg {
+        font-size: 1.4rem;
+      }
+    }
+    input {
+      font-size: 1.2rem;
+      flex: auto;
+      color: $color-txt1;
+    }
+    .btn-close{
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 6px 20px 6px 6px;
+      line-height: 1;
+      svg{
+        font-size: 1.2rem;
+      }
+    } 
+  }
+
+  &_result {
+    position: absolute;
+    top: calc(100% + 10px);
+    background-color: $color-b2;
+    width: 100%;
+    border-radius: $border-radius;
+    padding: 20px 10px;
+    z-index: 100;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      bottom: 100%;
+      left: 0;
+      
+    }
+
+    .userChat {
+      @include flex(center, unset);
+      padding: 10px;
+      border-radius: $border-radius;
+      cursor: pointer;
+      &.err{
+        color: $white;
+        &:hover{
+          background-color: unset;
+          cursor: unset;
+        }
+      }
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+      .userChatInfo {
+        span {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: $white;
+        }
+        p {
+          font-size: 1rem;
+          color: $color-txt1;
+        }
+      }
+
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+  }
+}

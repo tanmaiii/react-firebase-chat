@@ -1,0 +1,17 @@
+@mixin flex($aligin-item, $justify-content){
+    display: flex;
+    align-items: $aligin-item;
+    justify-content: $justify-content;
+}
+
+@mixin text($line){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+}
+
+@mixin overlay{
+    background-color: rgba($color: #0000, $alpha: 0.6);
+}

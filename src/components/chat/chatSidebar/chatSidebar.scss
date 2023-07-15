@@ -1,0 +1,103 @@
+@use '../../../scss/' as *;
+
+.chatSidebar{
+    margin: 0 10px;
+    padding: 20px;
+    border-radius: $border-radius;
+    background-color: $color-primary;
+    .chatSidebar_info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $white;
+
+        img{
+            height: 120px;
+            width: 120px;
+            overflow: hidden;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 2px solid $white;
+        }
+
+        &_name{
+            font-size: 1.2rem;
+        }
+
+        &_number{
+            margin-bottom: 10px;
+            color: $color-txt1;
+        }
+
+        &_control{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+            button{
+                cursor: pointer;
+                padding: 10px 14px;
+                border-radius: $border-radius;
+                background-color: #6963db;
+                display: flex;
+                align-items: center;
+                transition: all .3s;
+                svg{
+                    font-size: 1.8rem;
+                    color: $white;
+                }
+                &:hover{
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        &_dcs{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        &_tag{
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                li{
+                    font-size: 0.9rem;
+                    padding: 4px 10px;
+                    border-radius: 8px;
+                    opacity: 0.8;
+                    background-color: #cf6a87;
+                    &:nth-child(1){
+                        background-color: #db637b;
+                    }
+                    &:nth-child(2){
+                        background-color: #606D5D;
+                    }
+                    &:nth-child(3){
+                        background-color: #1B9CFC;
+                    }
+                    &:nth-child(4){
+                        background-color: #3B3B98;
+                    }
+                    &:nth-child(5){
+                        background-color: #2C3A47;
+                    }
+                    &:nth-child(6){
+                        background-color: #F97F51;
+                    }
+                    &:nth-child(7){
+                        background-color: #cf6a87;
+                    }
+                    &:nth-child(8){
+                        background-color: #596275;
+                    }
+                    &:nth-child(9){
+                        background-color: #786fa6;
+                    }
+                }
+            }
+        }
+    }
+}
