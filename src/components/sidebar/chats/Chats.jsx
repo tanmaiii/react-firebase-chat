@@ -45,7 +45,7 @@ export default function Chats() {
                 <div className="userChatInfo_lastMessage">
                   <p className="text">{chat[1].lastMessage?.text}</p>
                   <p className="time">
-                    {`${new Date(
+                    {chat[1].date && `${new Date(
                       chat[1].date.seconds * 1000
                     ).getHours()} : ${new Date(
                       chat[1].date.seconds * 1000
