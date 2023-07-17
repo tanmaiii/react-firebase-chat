@@ -8,28 +8,89 @@
   left: 50%;
   transform: translateX(-50%);
   // height: $height-input-chat;
-  @include flex(center,unset);
+  @include flex(center, unset);
   background-color: $color-b2;
   border-radius: 20px;
-  textarea {
-    color: $white;
-    height: 55px;
-    max-height: 180px;
-    resize: none;
-    font-size: 1.2rem;
-    padding: 16px;
+
+  .main {
     width: 100%;
-    margin-right: 10px;
+    
+    &_img {
+      position: relative;
+      width: max-content;
+      img {
+        max-height: 90px;
+      }
+      &_file{
+        max-width: 400px;
+        width: max-content;
+        min-width: 100px;
+        @include flex(center, unset);
+        background-color: $color-b4;
+        padding: 10px 20px;
+        border-radius: $border-radius;
+        color: $color-txt1;
+        i{
+          margin-right: 10px;
+        }
+        h4{
+          @include text(1);
+          @include mobile(){
+            width: 100px;
+          }
+        }
+      }
+      button{
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: $color-b1;
+        color: $white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        i{
+          font-size: 1rem;
+          line-height: 1;
+        }
+
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+    }
+
+    textarea {
+      color: $white;
+      height: 55px;
+      max-height: 180px;
+      resize: none;
+      font-size: 1.2rem;
+      padding: 16px;
+      width: 100%;
+      margin-right: 10px;
+    }
   }
 
   .send {
     @include flex(center, unset);
-    .label-img {
+    label{
       cursor: pointer;
       @include flex(center, unset);
       color: $color-txt1;
       svg {
         font-size: 1.6rem;
+      }
+      &.lable-file{
+        margin-right: 6px;
+        svg{
+          font-size: 1.8rem;
+        }
       }
     }
     .btn-send {

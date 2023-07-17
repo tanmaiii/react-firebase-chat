@@ -16,7 +16,6 @@ export default function Navbar() {
   const handleBtnMenu = () => {
     const sidebar = document.querySelector('.sidebar')
     sidebar.classList.toggle('active');
-    console.log(sidebar);
   }
 
   return (

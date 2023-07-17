@@ -36,6 +36,37 @@
       img {
         max-width: 50%;
         margin-bottom: 10px;
+        cursor: pointer;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+      &_img_file{
+        max-width: 400px;
+        width: max-content;
+        min-width: 100px;
+        @include flex(center, unset);
+        background-color: $color-primary;
+        padding: 10px 20px;
+        border-radius: $border-radius;
+        color: $white;
+        cursor: pointer;
+        i{
+          margin-right: 10px;
+        }
+        span{
+          @include text(1);
+          font-weight: 300;
+          font-size: 1rem;
+          flex: 1;
+          @include mobile(){
+            width: 100px;
+          }
+        }
+        svg{
+          font-size: 1.2rem;
+          margin-left: 10px;
+        }
       }
       &_time{
           color: $color-txt2;
@@ -53,6 +84,9 @@
       .message_content_img{
         @include flex(center, unset);
         justify-content: end;
+        &_file{
+            background-color: $color-b4;
+        }
       }
       .message_avt {
         display: none;

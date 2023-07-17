@@ -11,7 +11,6 @@ import { BsFillBookFill } from "react-icons/bs";
 
 import { useAuth } from "../../contexts/AuthContext";
 import { db, storage, auth } from "../../utils/firebase";
-import { updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { setDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
 
