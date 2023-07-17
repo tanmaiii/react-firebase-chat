@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./chatSidebar.scss";
-import img from "../../../assets/nofile.jpg";
-import avt from "../../../assets/sdsad.jpg";
 import { BiPhoneCall } from "react-icons/bi";
 import { FiVideo } from "react-icons/fi";
 import { IoMdVolumeOff } from "react-icons/io";
@@ -48,7 +46,7 @@ export default function ChatSidebar() {
             <ul>
               <li>UI</li>
               <li>UX</li>
-              <li>website degsite</li>
+              <li>website design</li>
               <li>play game</li>
             </ul>
           </div>

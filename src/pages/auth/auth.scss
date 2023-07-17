@@ -18,12 +18,9 @@
   @include mobile {
     width: 80%;
   }
+
   .auth_img {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, 50%);
-    bottom: 100%;
+    margin: 0 auto;
     border: 6px solid $color-b4;
     border-radius: 50%;
     width: 120px;
@@ -35,8 +32,21 @@
       height: 100%;
     }
   }
+
   &_body {
-    padding-top: 60px;
+    padding-top: 10px;
+    &_header{
+      color: $white;
+      margin-bottom: 20px;
+      h3 {
+        font-size: 2rem;
+      }
+      span {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: $color-txt1;
+      }
+    }
 
     &_item_error{
       width: 100%;
@@ -62,6 +72,28 @@
       display: flex;
       align-items: center;
       margin-bottom: 20px;
+    }
+
+    &_item_password {
+      @include flex(center, end);
+      margin-bottom: 10px;
+      a,span {
+        font-size: 1.1rem;
+        color: $color-primary;
+      }
+    }
+
+    &_item_signup {
+      @include flex(center, center);
+      margin-top: 10px;
+      font-size: 1.1rem;
+      span {
+        color: $color-txt1;
+      }
+      a {
+        margin-left: 10px;
+        color: $color-primary;
+      }
     }
     
     &_item {
@@ -109,22 +141,9 @@
 }
 
 .auth_UpdateProfile {
+
   .auth_img {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, 50%);
-    bottom: 100%;
-    border: 6px solid $color-b4;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    overflow: hidden;
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
+    position: relative;
     label {
       position: absolute;
       width: 100%;
@@ -153,19 +172,6 @@
 
 .auth_login-signup {
   .auth_body {
-    padding-top: 0;
-    &_header {
-      color: $white;
-      margin-bottom: 20px;
-      h3 {
-        font-size: 2rem;
-      }
-      span {
-        font-size: 1.2rem;
-        font-weight: 300;
-        color: $color-txt1;
-      }
-    }
 
     &_item_avatar {
       @include flex(center, center);
@@ -197,78 +203,6 @@
             color: $white;
           }
         }
-      }
-    }
-
-
-
-    &_item {
-      width: 100%;
-      color: $white;
-      font-size: 1.1rem;
-      display: block;
-      background-color: $color-b3;
-      padding: 16px 20px;
-      border-radius: $border-radius;
-      display: flex;
-      align-items: center;
-      input {
-        padding: 0;
-        font-size: 1.2rem;
-        margin-left: 10px;
-        border-radius: 0;
-      }
-      label {
-        margin: 0;
-        padding: 8px 10px;
-        background-color: $color-b4;
-        border-radius: 10px;
-        color: $color-primary;
-        @include flex(center, unset);
-        svg {
-          font-size: 1.4rem;
-        }
-      }
-    }
-
-    &_item_password {
-      @include flex(center, end);
-      margin-bottom: 10px;
-      a {
-        font-size: 1.1rem;
-        color: $color-primary;
-      }
-    }
-
-    &_item_terms {
-      @include flex(center, end);
-      margin-bottom: 10px;
-      input {
-        width: 16px;
-        height: 16px;
-      }
-      span {
-        margin-left: 10px;
-        color: $color-primary;
-      }
-    }
-
-    &_item_btn {
-      button {
-        width: 100%;
-      }
-    }
-
-    &_item_signup {
-      @include flex(center, center);
-      margin-top: 10px;
-      font-size: 1.1rem;
-      span {
-        color: $color-txt1;
-      }
-      a {
-        margin-left: 10px;
-        color: $color-primary;
       }
     }
   }

@@ -26,20 +26,35 @@ export default function Chats() {
   }, [currentUser.uid]);
 
   const handleSelect = (u) => {
-    dispatch({type: 'CHANGE_USER', payload: u})
-  }
-
+    dispatch({ type: "CHANGE_USER", payload: u });
+  };
   return (
     <div className="chats">
-      {chats && Object.entries(chats).sort((a,b)=> b[1].date - a[1].date).map((chat,i) => (
-        <div key={i} className="userChat" onClick={() => handleSelect(chat[1].userInfo)}>
-          <img src={chat[1].userInfo?.photoURL} alt="" />
-          <div className="userChatInfo">
-            <span>{chat[1].userInfo?.displayName}</span>
-            <p>{chat[1].lastMessage?.text}</p>
-          </div>
-        </div>
-      ))}
+      {chats &&
+        Object.entries(chats)
+          .sort((a, b) => b[1].date - a[1].date)
+          .map((chat, i) => (
+            <div
+              key={i}
+              className="userChat"
+              onClick={() => handleSelect(chat[1].userInfo)}
+            >
+              <img src={chat[1].userInfo?.photoURL} alt="" />
+              <div className="userChatInfo">
+                <span>{chat[1].userInfo?.displayName}</span>
+                <div className="userChatInfo_lastMessage">
+                  <p className="text">{chat[1].lastMessage?.text}</p>
+                  <p className="time">
+                    {`${new Date(
+                      chat[1].date.seconds * 1000
+                    ).getHours()} : ${new Date(
+                      chat[1].date.seconds * 1000
+                    ).getMinutes()}`}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
     </div>
   );
 }

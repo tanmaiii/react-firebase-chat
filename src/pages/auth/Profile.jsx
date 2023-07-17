@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./auth.scss";
-import img from "../../assets/sdsad.jpg";
 import { Link, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../contexts/AuthContext";
 import { db } from "../../utils/firebase";
 import { doc, onSnapshot  } from "firebase/firestore";
+
+import { HiMail } from "react-icons/hi";
+import { BiSolidLockAlt } from "react-icons/bi";
+import { BiSolidUser } from "react-icons/bi";
+import { AiFillCamera, AiFillPhone } from "react-icons/ai";
+import { BsFillBookFill } from "react-icons/bs";
+
 
 export default function Profile() {
   const { logout, currentUser } = useAuth();
@@ -39,19 +45,19 @@ export default function Profile() {
           </div>
           <div className="auth_body">
             <div className="auth_body_item">
-              <label htmlFor="">Name:</label>
+              <label htmlFor=""><BiSolidUser/></label>
               <span>{currentUser.displayName}</span>
             </div>
             <div className="auth_body_item">
-              <label htmlFor="">Phone Number:</label>
+              <label htmlFor=""><AiFillPhone/></label>
               <span>{user.phone}</span>
             </div>
             <div className="auth_body_item">
-              <label htmlFor="">Email:</label>
+              <label htmlFor=""><HiMail/></label>
               <span>{user.email}</span>
             </div>
             <div className="auth_body_item">
-              <label htmlFor="">Introduce:</label>
+              <label htmlFor=""><BsFillBookFill/></label>
               <span>{user.dcs}</span>
             </div>
             <div className="auth_body_item_btn">

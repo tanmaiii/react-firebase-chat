@@ -9,7 +9,7 @@
     @include tablet(){
     };
     @include mobile(){
-        transform: translateX(-100%);
+        transform: translateX(-110%);
         &.active{
             transform: translateX(0);
         }
@@ -19,6 +19,7 @@
         left: 0;
         height: 100%;
         z-index: 80;
+        box-shadow: 4px -2px 15px -1px #000;
     }
 
     &_btn_close{

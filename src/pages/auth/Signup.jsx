@@ -190,7 +190,7 @@ export default function Signup() {
               placeholder="Re Password"
             />
           </div>
-          <div className="auth_body_item_terms">
+          <div className="auth_body_item_password">
             <input autoComplete="none" type="checkbox" />{" "}
             <span>Agree to the terms</span>
           </div>

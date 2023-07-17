@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import img from "../../assets/sdsad.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { HiMail } from "react-icons/hi";
 import { BiSolidLockAlt } from "react-icons/bi";

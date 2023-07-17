@@ -37,12 +37,23 @@
                 @include text(1)
 
             }
-            p{
-                max-width: 90%;
-                color: $color-txt1;
-                font-size: 1rem;
-                overflow: hidden;
-                @include text(1)
+            &_lastMessage{
+             @include flex (end, space-between);   
+             p{
+                 max-width: 90%;
+                 color: $color-txt1;
+                 font-size: 1rem;
+                 overflow: hidden;
+                 @include text(1)
+             }
+             .time{
+                font-size: 0.8rem;
+             }
+             @include tablet{
+                .time{
+                    // display: none;
+                }
+             }
             }
         }
     }

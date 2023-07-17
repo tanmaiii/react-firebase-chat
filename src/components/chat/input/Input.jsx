@@ -139,10 +139,9 @@ function Input() {
       });
     }
 
-
-    console.log('xong');
     setText("");
     setFile(null);
+    setImg(null)
     setImgRev(null);
     setLoading(false);
     fileRef.current.value = "";

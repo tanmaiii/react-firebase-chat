@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import img from "../../assets/sdsad.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { GrAddCircle } from "react-icons/gr";
 
@@ -127,7 +126,7 @@ export default function UpdateProfile() {
   };
 
   return (
-    <div className="container-auth">
+    <div className="full-center">
       <div className="auth_UpdateProfile auth">
         <div className="auth_img">
           {avatar ? (
@@ -148,7 +147,6 @@ export default function UpdateProfile() {
             onChange={handleInputImg}
           />
         </div>
-
         {user && (
           <div className="auth_body">
             {error && (

@@ -4,10 +4,11 @@
   padding: 10px 10px 10px 10px;
   height: calc(100% - $height-header-chat - $height-input-chat);
   overflow-y: auto;
+
   .message {
     display: flex;
     margin-bottom: 10px;
-
+    
     .message_avt {
       width: 40px;
       height: 40px;
@@ -20,12 +21,17 @@
       max-width: 60%;
       width: max-content;
       text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
       @include mobile{
-        max-width: 80%;
+        max-width: 70%;
       }
       p {
+        max-width: 100%;
+        display: block;
         background-color: $color-primary;
-
+        width: max-content;
         padding: 20px;
         color: $white;
         border-radius: 0 20px 20px 20px;
@@ -71,29 +77,32 @@
       &_time{
           color: $color-txt2;
           font-size: 0.8rem;
-          padding: 10px;
       }
     }
 
     &.owner {
       justify-content: flex-end;
-      p {
-        border-radius: 20px 0 20px 20px;
-        background-color: $color-b2;
-      }
-      .message_content_img{
-        @include flex(center, unset);
-        justify-content: end;
-        &_file{
-            background-color: $color-b4;
-        }
-      }
+      
       .message_avt {
         display: none;
       }
+
       .message_content{
-        text-align: right;
+        align-items: end;
+        p {
+          border-radius: 20px 0 20px 20px;
+          background-color: $color-b2;
+        }
+        .message_content_img{
+          @include flex(center, unset);
+          justify-content: end;
+          &_file{
+              background-color: $color-b4;
+          }
+        }
       }
+
+      
     }
   }
 }

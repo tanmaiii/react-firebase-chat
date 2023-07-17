@@ -3,7 +3,7 @@
 .input {
   position: absolute;
   bottom: 10px;
-  padding: 20px;
+  padding: 10px;
   width: 95%;
   left: 50%;
   transform: translateX(-50%);
@@ -14,7 +14,8 @@
 
   .main {
     width: 100%;
-    
+    @include flex(start, center);
+    flex-direction: column;
     &_img {
       position: relative;
       width: max-content;

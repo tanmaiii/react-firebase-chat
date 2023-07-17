@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import img from "../../assets/sdsad.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { HiMail } from "react-icons/hi";
 import { BiSolidLockAlt } from "react-icons/bi";
@@ -70,7 +69,7 @@ export default function Login() {
             <Link to={"/auth/forgot-password"}>Forgot password ?</Link>
           </div>
           <div className="auth_body_item_btn">
-            <button disabled={loading} className="btn btn-blue" onClick={handleLogin}>
+            <button disabled={loading} className="btn btn-blue w100" onClick={handleLogin}>
               {loading ? 'loading...' : 'Login'}
             </button>
           </div>
