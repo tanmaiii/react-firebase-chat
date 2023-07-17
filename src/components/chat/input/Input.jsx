@@ -144,7 +144,9 @@ function Input() {
     setImg(null)
     setImgRev(null);
     setLoading(false);
-    fileRef.current.value = "";
+    if (fileRef.current.files[0].length > 0 ){
+      fileRef.current.value = "";
+    }
   };
 
   const handleFile = (e) => {
