@@ -121,6 +121,12 @@
         color: $color-txt1;
       }
     }
+    .logout{
+      color: $color-txt1;
+      padding: 10px;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
   }
 
   &_right_menu {

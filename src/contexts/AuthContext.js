@@ -14,6 +14,7 @@ export function AuthProvider({children}) {
     const [loading, setLoading] = useState(true)
     const googleProvider = new GoogleAuthProvider();
 
+
     function signup(email, password) {
         return createUserWithEmailAndPassword(auth, email, password)
     }

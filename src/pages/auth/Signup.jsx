@@ -1,21 +1,20 @@
 import React, { useEffect, useState, useRef } from "react";
 import avt from "../../assets/avatar.jpg";
-import { Link , useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { HiMail } from "react-icons/hi";
 import { BiSolidLockAlt } from "react-icons/bi";
 import { BiSolidUser } from "react-icons/bi";
 import { AiFillCamera } from "react-icons/ai";
 
-import { useAuth} from "../../contexts/AuthContext";
-import {db, storage, auth } from '../../utils/firebase'
-import {updateProfile} from 'firebase/auth'
-import { ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
-import { setDoc, doc , onSnapshot} from "firebase/firestore";
-
+import { useAuth } from "../../contexts/AuthContext";
+import { db, storage, auth } from "../../utils/firebase";
+import { updateProfile } from "firebase/auth";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { setDoc, doc, onSnapshot } from "firebase/firestore";
 
 export default function Signup() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [avatar, setAvatar] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -31,38 +30,39 @@ export default function Signup() {
 
     if (emailRef.current.value === "") return setError("Email is not null");
 
-    if(passwordRef.current.value.length < 6) {
+    if (passwordRef.current.value.length < 6) {
       return setError("Password must be at least 6 character");
-    } 
+    }
 
-    if (passwordRef.current.value !== rePasswordRef.current.value){
+    if (passwordRef.current.value !== rePasswordRef.current.value) {
       return setError("Password is not match");
     }
 
-    if(fileRef.current.files[0] === undefined){
-        return setError("Avatar is not null");
-    } 
-      
-    const file = fileRef.current.files[0]
+    if (fileRef.current.files[0] === undefined) {
+      return setError("Avatar is not null");
+    }
+
+    const file = fileRef.current.files[0];
     const displayName = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     setLoading(true);
-    try{
-      const res = await signup(email, password)
+
+    try {
+      const res = await signup(email, password);
 
       const date = new Date().getTime();
-      const storageRef = ref(storage, `${displayName + date}`)
+      const storageRef = ref(storage, `${displayName + date}`);
 
       await uploadBytesResumable(storageRef, file).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
           try {
             //Update profile
-            await  updateProfile(res.user, {
+            await updateProfile(res.user, {
               displayName,
               photoURL: downloadURL,
             });
-            
+
             //create user on firestore
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
@@ -70,7 +70,7 @@ export default function Signup() {
               email,
               photoURL: downloadURL,
               phone: null,
-              dcs:'',
+              dcs: "",
             });
 
             //create empty user chats on firestore
@@ -84,11 +84,11 @@ export default function Signup() {
           }
         });
       });
-    }catch(err) {
-        setError('Error Signup')
-        setLoading(false);
+    } catch (err) {
+      setError("Error Signup");
+      setLoading(false);
     }
-    setLoading(false)
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -121,7 +121,7 @@ export default function Signup() {
           <div className="auth_body_item_avatar">
             <div className="auth_body_item_avatar_img">
               {avatar ? (
-                <img  src={avatar.preview} alt="" />
+                <img src={avatar.preview} alt="" />
               ) : (
                 <img src={avt} alt="" />
               )}
@@ -196,9 +196,7 @@ export default function Signup() {
           </div>
           <div onClick={handleSubmit} className="auth_body_item_btn">
             <button disabled={loading} className="btn btn-blue">
-              {
-                loading ? 'Loading...' : 'SignUp'
-              }
+              {loading ? "Loading..." : "SignUp"}
             </button>
           </div>
           <div className="auth_body_item_signup">

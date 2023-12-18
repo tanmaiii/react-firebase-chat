@@ -6,12 +6,14 @@ import logo from "../../assets/logo.png";
 import {FaRegUserCircle} from 'react-icons/fa'
 import {BsChatSquareDots} from 'react-icons/bs'
 import {TiThMenu} from 'react-icons/ti'
+import {FiLogOut} from 'react-icons/fi'
 
 import { useAuth } from '../../contexts/AuthContext'
 
 export default function Navbar() {
   const {pathname} = useLocation();
-  const {currentUser} = useAuth()
+  const {currentUser, logout} = useAuth()
+  console.log(currentUser);
 
   const handleBtnMenu = () => {
     const sidebar = document.querySelector('.sidebar')
@@ -39,6 +41,7 @@ export default function Navbar() {
           <span> Hello, {currentUser.displayName}</span>
         </div>
         <img src={currentUser.photoURL} alt="" />
+        <button className="logout" onClick={() => logout()}><FiLogOut/></button>
       </div>
       <div  className="navbar_right_menu" onClick={handleBtnMenu}>
         <button id="btnMenu">
